@@ -1,7 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const { getAllSongs, getSongById, addSong } = require('../queries/song');
-const { checkName, checkArtist, checkIsFavorite } = require('../validations/checkSongs');
+const {
+  getAllSongs,
+  getSongById,
+  addSong,
+  deleteSong,
+} = require('../queries/song');
+const {
+  checkName,
+  checkArtist,
+  checkIsFavorite,
+} = require('../validations/checkSongs');
 
 router.get('/', async (req, res) => {
   try {
@@ -32,6 +41,20 @@ router.post('/', checkName, checkArtist, checkIsFavorite, async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to create song' });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedSong = await deleteSong(id);
+    if (!deletedSong) {
+      return res.status(400).json({ error: 'No song found' });
+    }
+    res.json('Song deleted');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to delete song' });
   }
 });
 

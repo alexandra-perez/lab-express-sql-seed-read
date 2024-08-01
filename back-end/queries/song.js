@@ -22,18 +22,24 @@ const addSong = async (song) => {
   try {
     const newSong = await db.one(
       `INSERT INTO songs (name, artist, album, time, is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-      [
-       song.name,
-       song.artist,
-       song.album,
-       song.time,
-       song.is_favorite,
-      ]
+      [song.name, song.artist, song.album, song.time, song.is_favorite]
     );
-      return newSong;
+    return newSong;
   } catch (error) {
     return error;
   }
 };
 
-module.exports = { getAllSongs, getSongById, addSong };
+const deleteSong = async (id) => {
+  try {
+    const songToDelete = await db.one(
+      'DELETE FROM songs WHERE id=$1 RETURNING *',
+      id
+    );
+    return songs;
+  } catch (error) {
+    return error;
+  }
+};
+
+module.exports = { getAllSongs, getSongById, addSong, deleteSong };
