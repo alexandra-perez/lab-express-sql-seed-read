@@ -1,0 +1,16 @@
+.NavBar {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 7rem;
+
+    .logo {
+        color: #c32ac3;
+        font-weight: 700;
+    }
+
+    ul {
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
