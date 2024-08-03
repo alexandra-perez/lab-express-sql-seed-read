@@ -1,0 +1,31 @@
+.Searchbar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #c32ac3;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 50%;
+
+    input {
+        border: none;
+        padding: 10px;
+        flex: 1;
+        outline: none;
+    }
+
+    button {
+        background-color: #c32ac3;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        i {
+            font-size: 16px;
+        }
+    }
+}
