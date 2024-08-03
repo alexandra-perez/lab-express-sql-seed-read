@@ -5,6 +5,7 @@ const {
   getSongById,
   addSong,
   deleteSong,
+  updateSong,
 } = require('../queries/song');
 const {
   checkName,
@@ -55,6 +56,20 @@ router.delete('/:id', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to delete song' });
+  }
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updatedSong = await updateSong(id, req.body);
+    if (!updatedSong) {
+      return res.status(404).json({ error: 'No song found' });
+    }
+    res.json(updatedSong);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to update song' });
   }
 });
 
