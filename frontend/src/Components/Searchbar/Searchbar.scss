@@ -15,8 +15,8 @@
     }
 
     button {
-        background-color: #c32ac3;
-        color: #fff;
+        background-color: transparent;
+        color: #c32ac3;
         border: none;
         padding: 12px;
         display: flex;
@@ -27,5 +27,10 @@
         i {
             font-size: 16px;
         }
+    }
+
+    button:hover {
+        background-color: transparent;
+        color: #000;
     }
 }

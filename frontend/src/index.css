@@ -20,3 +20,30 @@ a:any-link {
   text-decoration: none;
   color: inherit;
 }
+
+h1 {
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px 0px;
+}
+
+button:hover {
+  background-color: #C32BC3;
+  color: #fff;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #EFEFEF;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
