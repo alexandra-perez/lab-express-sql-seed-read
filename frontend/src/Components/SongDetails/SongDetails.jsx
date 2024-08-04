@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './SongDetails.scss';
 
 export default function SongDetails() {
@@ -27,6 +27,9 @@ export default function SongDetails() {
       <p>
         <i className="fa-solid fa-clock"></i> {song.time}
       </p>
+      <Link to={`/songs/${id}/edit`}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 }
