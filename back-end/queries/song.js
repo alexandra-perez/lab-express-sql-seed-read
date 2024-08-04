@@ -11,7 +11,7 @@ const getAllSongs = async () => {
 
 const getSongById = async (id) => {
   try {
-    const song = await db.one('SELECT * FROM songs WHERE id=$1', id);
+    const song = await db.oneOrNone('SELECT * FROM songs WHERE id=$1', id);
     return song;
   } catch (error) {
     return error;
@@ -32,7 +32,7 @@ const addSong = async (song) => {
 
 const deleteSong = async (id) => {
   try {
-    const songToDelete = await db.one(
+    const songToDelete = await db.oneOrNone(
       'DELETE FROM songs WHERE id=$1 RETURNING *',
       id
     );
@@ -44,8 +44,8 @@ const deleteSong = async (id) => {
 
 const updateSong = async (id, song) => {
   try {
-    const updatedSong = await db.one(
-      `UPDATE songs  SET name=$1, artist=$2, album=$3, time=$4, is_favorite=$5 WHERE id=$6 RETURNING *`,
+    const updatedSong = await db.oneOrNone(
+      `UPDATE songs SET name=$1, artist=$2, album=$3, time=$4, is_favorite=$5 WHERE id=$6 RETURNING *`,
       [song.name, song.artist, song.album, song.time, song.is_favorite, id]
     );
     return updatedSong;

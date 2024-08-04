@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 
   try {
     const song = await getSongById(id);
-    res.status(400).json(song);
+    res.status(200).json(song);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to fetch song' });
@@ -71,7 +71,7 @@ router.put(
       if (!updatedSong) {
         return res.status(404).json({ error: 'No song found' });
       }
-      res.json(updatedSong);
+      res.status(200).json(updatedSong);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Failed to update song' });
