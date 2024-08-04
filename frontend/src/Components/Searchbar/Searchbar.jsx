@@ -5,7 +5,7 @@ export default function Searchbar() {
     <form className="Searchbar">
       <input type="text" placeholder="Find a song" />
       <button>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i className="fa-solid fa-magnifying-glass"></i>
       </button>
     </form>
   );

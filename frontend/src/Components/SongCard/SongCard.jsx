@@ -1,18 +1,18 @@
 import './SongCard.scss';
 
-export default function SongCard() {
+export default function SongCard({song}) {
   return (
     <div className="SongCard">
-      <h1>Imagine</h1>
+      <h1>{song.name}</h1>
       <div className="container">
         <p>
-          <i className="fa-solid fa-microphone-lines"></i> John Lennon
+          <i className="fa-solid fa-microphone-lines"></i> {song.artist}
         </p>
         <p>
-          <i className="fa-solid fa-compact-disc"></i> Imagine
+          <i className="fa-solid fa-compact-disc"></i> {song.album}
         </p>
         <p>
-          <i className="fa-solid fa-clock"></i> 3:03
+          <i className="fa-solid fa-clock"></i> {song.time}
         </p>
         <p></p>
       </div>
