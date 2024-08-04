@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './SongDetails.scss';
 
 export default function SongDetails() {
@@ -7,13 +7,27 @@ export default function SongDetails() {
   const [song, setSong] = useState({});
 
   let { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${API}/songs/${id}`)
       .then((res) => res.json())
       .then((resJSON) => setSong(resJSON));
-    console.log(song);
   }, [id]);
+
+  function deleteSong() {
+    fetch(`${API}/songs/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify(song),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(() => {
+        navigate('/songs');
+      })
+      .catch((error) => console.error(error));
+  }
 
   return (
     <div className="SongDetails">
@@ -27,9 +41,12 @@ export default function SongDetails() {
       <p>
         <i className="fa-solid fa-clock"></i> {song.time}
       </p>
-      <Link to={`/songs/${id}/edit`}>
-        <button>Edit</button>
-      </Link>
+      <div className="buttons-container">
+        <Link to={`/songs/${id}/edit`}>
+          <button>Edit</button>
+        </Link>
+        <button onClick={deleteSong}>Delete</button>
+      </div>
     </div>
   );
 }

@@ -14,4 +14,9 @@
     i {
         color: $icon-color;
     }
+
+    .buttons-container {
+        display: flex;
+        gap: 1rem;
+    }
 }
