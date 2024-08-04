@@ -14,7 +14,7 @@ export default function Index() {
       .then((res) => res.json())
       .then((resJSON) => {
         setSongs(resJSON);
-        console.log(songs)
+        // console.log(songs)
       });
   }, []);
 

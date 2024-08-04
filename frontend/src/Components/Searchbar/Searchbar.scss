@@ -1,10 +1,12 @@
+@import '../../styles/variables.scss';
+
 .Searchbar {
     display: flex;
     align-items: center;
-    border: 2px solid #c32ac3;
+    border: 2px solid $primary-color;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: $box-shadow;
     width: 50%;
 
     input {
@@ -16,7 +18,7 @@
 
     button {
         background-color: transparent;
-        color: #c32ac3;
+        color: $primary-color;
         border: none;
         padding: 12px;
         display: flex;
@@ -26,6 +28,7 @@
 
         i {
             font-size: 16px;
+            color: $primary-color;
         }
     }
 

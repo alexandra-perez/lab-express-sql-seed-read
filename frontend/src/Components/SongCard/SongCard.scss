@@ -1,6 +1,8 @@
+@import '../../styles/variables.scss';
+
 .SongCard {
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: $box-shadow;
     margin: 1rem auto;
     padding: 1rem;
 
@@ -19,6 +21,6 @@
     }
 
     i {
-        color: #bdbbbd;
+        color: $icon-color;
     }
 }

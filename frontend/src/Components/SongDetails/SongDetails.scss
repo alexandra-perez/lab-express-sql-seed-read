@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.SongDetails {
+    width: 50%;
+    border-radius: 5px;
+    margin: 1rem auto;
+    box-shadow: $box-shadow;
+    padding: 1.5rem;
+
+    h1 {
+        color: $primary-color;
+    }
+
+    i {
+        color: $icon-color;
+    }
+}
