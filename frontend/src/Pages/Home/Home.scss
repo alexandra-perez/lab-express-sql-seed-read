@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.Home {
+    padding: 1rem 6rem;
+    text-align: center;
+
+    i, h1 {
+        color: $primary-color;
+    }
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
+import Home from './Pages/Home/Home';
 import Index from './Pages/Index/Index';
 import New from './Pages/New/New';
 import Show from './Pages/Show/Show';
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/songs" element={<Index />} />
           <Route path="/songs/:id" element={<Show />} />
           <Route path="/songs/:id/edit" element={<Edit />} />
