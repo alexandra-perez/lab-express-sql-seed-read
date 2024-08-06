@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import './CreateForm.scss';
 
 export default function CreateForm() {
+  const [newSong, setNewSong] = useState({});
+
+  function createSong() {}
+
+  function handleTextChange() {}
+
+  function handleSubmit() {}
+
   return (
-    <form className="CreateForm">
+    <form className="CreateForm" onSubmit={handleSubmit}>
       <h1>Add a new Song</h1>
       <label htmlFor="songName">Title</label>
       <input type="text" id="songName" name="songName" />

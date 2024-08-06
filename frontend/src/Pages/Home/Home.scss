@@ -3,8 +3,14 @@
 .Home {
     padding: 1rem 6rem;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    i, h1 {
+    i,
+    h1 {
         color: $primary-color;
+        font-size: 2rem;
     }
 }

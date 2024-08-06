@@ -6,6 +6,7 @@ import Index from './Pages/Index/Index';
 import New from './Pages/New/New';
 import Show from './Pages/Show/Show';
 import Edit from './Pages/Edit/Edit';
+import Footer from './Components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/songs/:id/edit" element={<Edit />} />
           <Route path="/songs/new" element={<New />} />
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
